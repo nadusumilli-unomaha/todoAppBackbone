@@ -1,0 +1,12 @@
+<td><input type="checkbox" name="completed" id="completed" {{#todo.completed}} checked{{/todo.completed}}> </td> <td>{{todo.id}}</td>
+<td>{{todo.title}} - {{#unless todo.completed}}This is awesome{{/unless}}</td>
+<td>{{todo.description}}</td>
+<td>{{#if todo.author.name}}
+    {{#with todo.author}}
+    {{name}}
+    {{/with}}
+    {{else}}{{todo.author}}{{/if}}</td>
+<td>
+    <button class="btn btn-info" id="edit-redirect-todo">Edit</button>
+    <button class="btn btn-danger" id="delete-todo" data-id="{{todo.id}}">Delete</button>
+</td>
